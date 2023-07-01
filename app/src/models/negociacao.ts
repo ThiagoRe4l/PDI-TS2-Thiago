@@ -1,12 +1,11 @@
-import { Comparavel } from "../interfaces/comparavel.js";
-import { Imprimivel } from "../utils/imprimivel.js";
+import { Modelo } from "../interfaces/modelo";
 
-export class Negociacao implements Imprimivel, Comparavel<Negociacao> {
+export class Negociacao implements Modelo<Negociacao> {
     constructor(
-        private _data: Date, 
-        public readonly quantidade: number, 
+        private _data: Date,
+        public readonly quantidade: number,
         public readonly valor: number
-    ) {}
+    ) { }
 
     public static criaDe(dataString: string, quantidadeString: string, valorString: string): Negociacao {
         const exp = /-/g;
